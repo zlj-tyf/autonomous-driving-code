@@ -1,0 +1,11 @@
+<launch>
+
+<node
+pkg = "tongji_pkg"
+type = "compute_node_1_test4cam.py"
+name = "compute_node_1"
+/>
+
+
+
+</launch>

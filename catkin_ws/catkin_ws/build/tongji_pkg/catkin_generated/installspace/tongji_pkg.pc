@@ -1,0 +1,8 @@
+prefix=/home/tj/catkin_ws/install
+
+Name: tongji_pkg
+Description: Description of tongji_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,33 @@
+<launch>
+
+<node
+pkg = "tongji_pkg"
+type = "compute_node_1_test4cam.py"
+name = "compute_node_1"
+/>
+
+<node
+pkg = "tongji_pkg"
+type = "compute_node_2_test4cam.py"
+name = "compute_node_2"
+/>
+
+<node
+pkg = "tongji_pkg"
+type = "compute_node_3_test4cam.py"
+name = "compute_node_3"
+/>
+
+<node
+pkg = "tongji_pkg"
+type = "compute_node_4_test4cam.py"
+name = "compute_node_4"
+/>
+
+<node
+pkg = "tongji_pkg"
+type = "intersc_manage.py"
+name = "intersc_manage"
+/>
+
+</launch>

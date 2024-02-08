@@ -1,0 +1,36 @@
+<launch>
+    <arg name="cam1" default="0"/>
+    <arg name="cam2" default="2"/>
+    <arg name="cam3" default="4"/>
+    <arg name="cam4" default="6"/>
+    <arg name="img_sz" default="500"/>
+    <arg name="view_path" default="True"/>
+    <arg name="baud_rate" default="115200"/>
+    <arg name="port" default="/dev/ttyUSB0"/>
+    <arg name="recalibrate" default="False"/>
+    <arg name="rechoose" default="False"/>
+    <!-- <arg name="ids" default="['1', '4',  '6', '7']"/> -->
+    <arg name="ids" default="['1','2', '4', '5', '6', '7']"/> 
+    <!-- <arg name="ids" default="['6']"/> -->
+
+    <node pkg="traffic" type="camera.py" name="camera">
+        <param name="cam1" type="int" value="$(arg cam1)"/>
+        <param name="cam2" type="int" value="$(arg cam2)"/>
+        <param name="cam3" type="int" value="$(arg cam3)"/>
+        <param name="cam4" type="int" value="$(arg cam4)"/>
+        <param name="ids" type="string" value="$(arg ids)"/>
+        <param name="img_sz" type="int" value="$(arg img_sz)"/>
+        <param name="view_path" type="bool" value="$(arg view_path)"/>
+        <param name="recalibrate" type="bool" value="$(arg recalibrate)"/>
+        <param name="rechoose" type="bool" value="$(arg rechoose)"/>
+    </node>
+    <node pkg="traffic" type="controller.py" name="controller" output="screen">
+        <param name="ids" type="string" value="$(arg ids)"/>
+        <param name="img_sz" type="int" value="$(arg img_sz)"/>
+    </node>
+    <node pkg="traffic" type="commander.py" name="commander">
+        <param name="ids" type="string" value="$(arg ids)"/>
+        <param name="port" type="string" value="$(arg port)"/>
+        <param name="baud_rate" type="int" value="$(arg baud_rate)"/>
+    </node>
+</launch>

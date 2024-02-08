@@ -1,0 +1,33 @@
+<launch>
+
+<node
+pkg = "tongji_pkg"
+type = "cam1.py"
+name = "initi_node_1"
+/>
+
+<node
+pkg = "tongji_pkg"
+type = "cam2.py"
+name = "initi_node_2"
+/>
+
+<node
+pkg = "tongji_pkg"
+type = "cam3.py"
+name = "initi_node_3"
+/>
+
+<node
+pkg = "tongji_pkg"
+type = "cam4.py"
+name = "initi_node_4"
+/>
+
+<node
+pkg = "tongji_pkg"
+type = "display_1020.py"
+name = "display"
+/>
+
+</launch>
